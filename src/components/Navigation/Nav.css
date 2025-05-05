@@ -1,0 +1,41 @@
+nav{
+    padding: 20px 30px; 
+    justify-content: center;
+}
+
+nav ul{
+    display: grid;
+    grid-template-columns: repeat(5, 2fr); 
+    gap: 20px;
+    align-items: center; 
+    text-decoration: none;
+    padding: 0%;
+}
+
+nav ul li{
+    list-style: none; 
+    text-align: center; 
+    padding: 10px;
+    font-weight: bolder;
+}
+
+nav ul li a {
+    text-decoration: none; /* Remove underline from links */
+    color: var(--text-color);
+    font-size: var(--font-size-base);
+}
+
+nav ul li:hover{
+    transform: scale(1.15);
+    transition: 0.3s ease-in-out;
+}
+
+nav ul li:nth-child(3) a{
+    font-size: var(--font-size-portfolio);
+    font-weight: bold;
+    background: var(--background-text-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0px 2px 5px #DAD9D9;
+}
+
