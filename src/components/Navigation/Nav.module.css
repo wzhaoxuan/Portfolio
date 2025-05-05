@@ -12,25 +12,25 @@ nav ul{
     padding: 0%;
 }
 
-nav ul li{
+nav .navList li{
     list-style: none; 
     text-align: center; 
     padding: 10px;
     font-weight: bolder;
 }
 
-nav ul li a {
+nav .navList li a {
     text-decoration: none; /* Remove underline from links */
     color: var(--text-color);
     font-size: var(--font-size-base);
 }
 
-nav ul li:hover{
+nav .navList li:hover{
     transform: scale(1.15);
     transition: 0.3s ease-in-out;
 }
 
-nav ul li:nth-child(3) a{
+nav .navList li:nth-child(3) a{
     font-size: var(--font-size-portfolio);
     font-weight: bold;
     background: var(--background-text-color);

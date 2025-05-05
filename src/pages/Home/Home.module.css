@@ -1,0 +1,61 @@
+.mainContent {
+    display: grid;
+    grid-template-areas:
+      "intro social"
+      "cv    cv";
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+    height: 100%;
+  }
+  
+  .intro {
+    grid-area: intro;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    color: var(--text-color);
+    padding:  5% 0% 0% 20%;
+  }
+  
+  .intro h1, .intro h2, .title, .socialLinks{
+    font-weight: bolder;
+    background: var(--background-text-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0%;
+  }
+
+    .intro h1 {
+        font-size: var(--font-size-header);
+    }
+
+  .intro h2 {
+    font-size: var(--font-size-subheader);
+  }
+
+  .title{
+    font-size: var(--font-size-header3);
+  }
+
+  .socialLinks{
+    list-style: none; 
+  }
+
+  .social {
+    grid-area: social;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .cv {
+    grid-area: cv;
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+  }
+
+
+  

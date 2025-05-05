@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Nav.css';
+import styles from './Nav.module.css';
 
 const Nav: React.FC = () => {
   return (
     <nav>
-      <ul>
+      <ul className={styles.navList}>
         <li><Link to="/projects">Projects</Link></li>
         <li><Link to="/skills">Skills</Link></li>
         <li><Link to="/">Portfolio.</Link></li>

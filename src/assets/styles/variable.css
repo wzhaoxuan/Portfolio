@@ -1,7 +1,7 @@
 /* Colors, fonts, and reusable styles */
 :root {
     --text-color: #FFFFFF;
-    --background-text-color: linear-gradient(90deg, #CCD0CF, #686A69); 
+    --background-text-color: linear-gradient(90deg, #ffffff, #686A69);
     --background-color: #000000;
 
 
@@ -10,6 +10,8 @@
     --font-size-base: 18px;
     --font-size-portfolio: 30px;
     --font-size-header: 80px;
+    --font-size-subheader: 40px;
+    --font-size-header3: 25px;
 
     /* Border radius */
     --border-radius-sm: 10px;
