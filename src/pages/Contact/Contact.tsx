@@ -8,29 +8,27 @@ const Contact: React.FC = () => {
     const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID!;
     const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY!;
 
-    const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         if (!formRef.current) return;
 
-        emailjs
-            .sendForm(
+        try {
+            const result = await emailjs.sendForm(
                 serviceId,
                 templateId,
                 formRef.current,
                 publicKey
-            )
-            .then(
-                (result) => {
-                    console.log("Email sent:", result.text);
-                    alert("Message sent successfully!");
-                    formRef.current?.reset();
-                },
-                (error) => {
-                    console.log("Email error:", error.text);
-                    alert("Failed to send message. Please try again.");
-                }
             );
+
+            console.log("Email sent:", result.text);
+            alert("Message sent successfully!");
+            formRef.current.reset();
+
+        } catch (error) {
+            console.error("Error sending email:", error);
+            alert("Failed to send message. Please try again later.");
+        }
     };
     
     return (
