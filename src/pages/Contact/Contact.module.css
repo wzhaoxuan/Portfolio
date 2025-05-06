@@ -1,0 +1,100 @@
+.contactContainer {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: start;
+  }
+
+.contactContainer h1{
+    font-size: var(--font-size-header);
+    font-weight: bolder;
+    background: var(--background-text-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0%;
+}
+  
+.contactForm {
+    display: grid;
+    grid-template-areas: "name email"
+        "message message"
+        "submit submit";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    gap: 40px;
+    width: 100%;
+    max-width: 1000px;
+    padding: 5%;
+}
+
+.contactForm input[type="text"] {
+    grid-area: name;
+}
+
+.contactForm input[type="email"] {
+    grid-area: email;
+}
+
+.contactForm input[type="text"], .contactForm input[type="email"]{
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    background-color: transparent;
+    color: var(--text-color);
+}
+
+.contactForm textarea {
+    grid-area: message;
+    height: 100px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    resize: none;
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    background-color: transparent;
+    color: var(--text-color);
+}
+
+.contactForm textarea::-webkit-scrollbar {
+    width: 8px;
+    height: 5px;
+  }
+  
+  .contactForm textarea::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .contactForm textarea::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+
+input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+    outline: none;
+    border-color: #212121;
+    box-shadow: 0 0 5px rgba(33, 33, 33, 0.5);
+}
+
+.contactForm button {
+    grid-area: submit;
+    justify-self: end;
+    padding: 12px;
+    background-color: transparent;
+    color: white;
+    font-weight: bold;
+    border-radius: var(--border-radius-md);
+    border: none;
+    box-shadow: 1px 1px 0px #FFFFFF;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.contactForm button:hover {
+    background-color: #333;
+}
+  

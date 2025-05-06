@@ -1,16 +1,23 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import styles from './Nav.module.css';
 
-const Nav: React.FC = () => {
+interface NavProps {
+  onHomeClick: () => void;
+  onSkillsClick: () => void;
+  onAboutClick: () => void;
+  onProjectsClick: () => void;
+  onContactClick: () => void;
+}
+
+const Nav: React.FC<NavProps> = ({onHomeClick, onSkillsClick, onAboutClick, onProjectsClick, onContactClick}) => {
   return (
-    <nav>
+    <nav className={styles.navContainer}>
       <ul className={styles.navList}>
-        <li><Link to="/projects">Projects</Link></li>
-        <li><Link to="/skills">Skills</Link></li>
-        <li><Link to="/">Portfolio.</Link></li>
-        <li><Link to="/about">About</Link></li>
-        <li><Link to="/contact">Contact</Link></li>
+        <li><a href='#projects' onClick={onProjectsClick}>Projects</a></li>
+        <li><a href='#skills' onClick={onSkillsClick}>Skills</a></li>
+        <li><a href='#home' onClick={onHomeClick}>Portfolio.</a></li>
+        <li><a href='#about' onClick={onAboutClick}>About</a></li>
+        <li><a href='#contacts' onClick={onContactClick}>Contact</a></li>
       </ul>
     </nav>
   );

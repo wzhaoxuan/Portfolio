@@ -1,20 +1,22 @@
+import React, { useRef } from 'react';
+import Contact from './pages/Contact/Contact';
 import Home from './pages/Home/Home';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Nav from './components/Navigation/Nav';
 
 function App() {
+  const contactRef = useRef<HTMLDivElement>(null);
+
+  const scrollToSection = () => {
+    if (contactRef.current) {
+      contactRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+  
   return (
-    <Router>
-      <div className="App">
-        <Home/>
-        {/* <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/skills" element={<Skills />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes> */}
-      </div>
-    </Router>
+    <>
+      <Home onContactClick={() => scrollToSection()}/>
+      <div ref={contactRef}><Contact /></div>
+    </>
   );
 }
 

@@ -1,30 +1,32 @@
 import React from 'react';
 import styles from './Home.module.css';
 import Nav from '../../components/Navigation/Nav';
+import SocialIcon from '../../components/SocialIcon/SocialIcon';
+import ScrollDown from '../../components/ScrollDown/ScrollDown';
 import Button from '../../components/Button/CVButton';
-// import {FaLinkedIn, FaX, FaDiscord} from 'react-icons/fa6';
+import {FaLinkedin, FaTwitter, FaDiscord} from 'react-icons/fa6';
 
-const Home: React.FC = () => {
+
+const Home: React.FC<{onContactClick: () => void}> = ({onContactClick}) => {
     return (
-        <div className={styles.container}>
-            <Nav />
+        <div className={styles.container} id="home">
+            <Nav    onProjectsClick={() => {}} 
+                    onSkillsClick={()=> {}} 
+                    onHomeClick={() => {}} 
+                    onAboutClick={() => {}} 
+                    onContactClick={onContactClick} 
+            />
+            
             <main className={styles.mainContent}>
-
                 <div className={styles.intro}>
                     <h2>Hello World! I'm</h2>
                     <h1>WONG ZHAO XUAN</h1>
 
-                    <div className={styles.title}>
-                        <h3>Software Engineer</h3>
+                    <div className={styles.titleContainer}>
+                        <h3 className={styles.title}>Software Engineer</h3>
                     </div>
 
-                    <nav>
-                        <ul className={styles.socialLinks}>
-                            <li>LinkedIn</li>
-                            <li>X</li>
-                            <li>Discord</li>
-                        </ul>
-                    </nav>
+                    <SocialIcon />
                 </div>
 
                 <h1 className={styles.social}></h1>
@@ -33,6 +35,8 @@ const Home: React.FC = () => {
                     <Button text="Download CV" onClick={() => window.open()}/>
                 </div>
             </main>
+
+            <ScrollDown />
         </div>
     );
 };

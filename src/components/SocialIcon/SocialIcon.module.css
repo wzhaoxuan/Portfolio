@@ -1,0 +1,14 @@
+.iconContainer{
+    width: 300px;
+}
+
+.socialLinks{
+    display: flex;
+    justify-content: left;
+    list-style: none;
+    padding: 0% 2%;
+}
+
+.socialLinks li{
+    padding: 0% 5%;
+}
