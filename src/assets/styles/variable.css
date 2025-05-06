@@ -1,9 +1,11 @@
 /* Colors, fonts, and reusable styles */
 :root {
     --text-color: #FFFFFF;
+
+    /* Backgrounds */
     --background-text-color: linear-gradient(90deg, #ffffff, #686A69);
     --background-color: #000000;
-
+    --background-card-color: #D9D9D9;
 
     /* Typography */
     --font-primary: 'Kameron', serif;

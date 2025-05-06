@@ -13,11 +13,11 @@ const Nav: React.FC<NavProps> = ({onHomeClick, onSkillsClick, onAboutClick, onPr
   return (
     <nav className={styles.navContainer}>
       <ul className={styles.navList}>
-        <li><a href='#projects' onClick={onProjectsClick}>Projects</a></li>
-        <li><a href='#skills' onClick={onSkillsClick}>Skills</a></li>
-        <li><a href='#home' onClick={onHomeClick}>Portfolio.</a></li>
-        <li><a href='#about' onClick={onAboutClick}>About</a></li>
-        <li><a href='#contacts' onClick={onContactClick}>Contact</a></li>
+        <li><a href='#projects'>Projects</a></li>
+        <li><a href='#skills'>Skills</a></li>
+        <li><a href='#home'>Portfolio.</a></li>
+        <li><a href='#about'>About</a></li>
+        <li><a href='#contacts'>Contact</a></li>
       </ul>
     </nav>
   );

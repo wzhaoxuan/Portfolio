@@ -32,7 +32,7 @@ const Contact: React.FC = () => {
     };
     
     return (
-        <main className={styles.contactContainer} id="contact">
+        <main className={styles.contactContainer} id="contacts">
             <h1>Contact Me</h1>
             <form ref={formRef} onSubmit={sendEmail} className={styles.contactForm}>
                 <input type="text" name="username" placeholder="Full Name" required />
