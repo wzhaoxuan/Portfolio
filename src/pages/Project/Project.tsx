@@ -1,9 +1,14 @@
-import React from "react";
+import React, {useState, useRef} from "react";
 import styles from "./Project.module.css";
-import GitHub from "../../components/Button/GitHub";
-
+import GitHub from "../../components/Button/GitHub/GitHub";
+import ProjectCard from "../../components/Cards/ProjectCards";
+import { projectCards } from "../../utils/projectData";
+import useSwipeNavigation from "../../hooks/swipeProjectCards";
 
 const Project: React.FC = () => {
+
+    const { centerIndex, handleMouseDown, handleMouseUp } = useSwipeNavigation(projectCards.length);
+
     return (
         <main className={styles.projectContainer} id="projects">
             <h1>Projects</h1>
@@ -11,27 +16,23 @@ const Project: React.FC = () => {
                 <div className={styles.GitHub}>
                     <GitHub />
                 </div>
-                <div className={styles.projectCards}>
-                    <div className={styles.card} id="card-one">
-                        <h2>Project 1</h2>
-                        <p>Description of project 1.</p>
-                    </div>
-                    <div className={styles.card} id="card-two">
-                        <h2>Project 2</h2>
-                        <p>Description of project 2.</p>
-                    </div>
-                    <div className={styles.card} id="card-three">
-                        <h2>Project 3</h2>
-                        <p>Description of project 3.</p>
-                    </div>
-                    <div className={styles.card} id="card-four">
-                        <h2>Project 4</h2>
-                        <p>Description of project 4.</p>
-                    </div>
-                    <div className={styles.card} id="card-five">
-                        <h2>Project 5</h2>
-                        <p>Description of project 5.</p>
-                    </div>
+                <div className={styles.projectCards} onMouseDown={handleMouseDown}onMouseUp={handleMouseUp}>
+                    {projectCards.map((card, index) => {
+                        const offset = index - centerIndex;
+                        const style = {
+                        transform: `translateX(${offset * 180}px) scale(${1 - Math.abs(offset) * 0.1})`,
+                        zIndex: 5 - Math.abs(offset),
+                        opacity: offset === 0 ? 1 : 0.6,
+                        };
+
+                        return (
+                            <ProjectCard
+                                key={card.id}
+                                {...card}
+                                style={style}
+                          />
+                        );
+                    })}
                 </div>
             </section>
         </main>

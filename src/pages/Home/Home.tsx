@@ -3,7 +3,7 @@ import styles from './Home.module.css';
 import Nav from '../../components/Navigation/Nav';
 import SocialIcon from '../../components/SocialMedia/SocialIcon';
 import ScrollDown from '../../components/ScrollDown/ScrollDown';
-import Button from '../../components/Button/CVButton';
+import Button from '../../components/Button/CV/CVButton';
 import {FaLinkedin, FaTwitter, FaDiscord} from 'react-icons/fa6';
 
 

@@ -1,0 +1,11 @@
+.card{
+    position: absolute;
+    width: 250px;
+    height: 350px;
+    background-color: var(--background-card-color);
+    border-radius: var(--border-radius-md);
+    box-shadow: 0px 4px 10px 5px black;
+    transition: transform 0.5s ease, z-index 0.5s, opacity 0.5s;
+    text-align: center;
+    padding: 20px;
+}
