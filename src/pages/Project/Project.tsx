@@ -2,7 +2,7 @@ import React, {useState, useRef} from "react";
 import styles from "./Project.module.css";
 import GitHub from "../../components/Button/GitHub/GitHub";
 import ProjectCard from "../../components/Cards/ProjectCards";
-import { projectCards } from "../../utils/projectData";
+import { projectCards } from "../../utils/data/projectData";
 import useSwipeNavigation from "../../hooks/swipeProjectCards";
 
 const Project: React.FC = () => {
